@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pokemon Info</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body>
+        <h1 class="section-title">Search Pokemon</h1>
+        <input type="text" id="pokemonName" placeholder="Enter Pokemon name" />
+        <button id="searchBtn" class="btn">Search</button>
+
+        <div class="container">
+            <h1 class="section-title">Current Pokemon</h1>
+            <div id="output" class="pokemon-card"></div>
+
+            <button id="prevBtn" class="btn">Previous</button>
+            <button id="nextBtn" class="btn">Next</button>
+
+            <h1 class="section-title">Saved Pokemon Database</h1>
+            <div id="savedPokemon" class="saved-pokemon-container"></div>
+        </div>
+        <script src="dist/index.js"></script>
+    </body>
+</html>

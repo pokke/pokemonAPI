@@ -1,0 +1,109 @@
+// Variabler
+$main-color: #333;
+$secondary-color: #666;
+$background-color: #f0f0f0;
+$btn-color: #e87561;
+$btn-color-hover: #ff4500;
+$btn-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+$border-color: #ccc;
+$border-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+$container-max-width: 60%;
+
+// Mixin för button styles
+@mixin btn-styles {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: $btn-color;
+    color: white;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: $btn-color-hover;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: $background-color;
+    color: $main-color;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    .centered-content {
+        text-align: center;
+        margin: 50px 0 30px;
+        max-width: $container-max-width;
+        margin: auto;
+    }
+
+    .section-title {
+        @extend .centered-content;
+        margin-bottom: 30px;
+    }
+
+    #output,
+    .saved-pokemon-container {
+        @extend .centered-content;
+    }
+
+    .pokemon-card {
+        border: 1px solid $border-color;
+        padding: 20px;
+        margin: 10px auto;
+        border-radius: 5px;
+        width: 200px;
+        box-shadow: $border-shadow;
+
+        h2 {
+            color: $main-color;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: $secondary-color;
+        }
+
+        button {
+            @include btn-styles;
+            margin-top: 20px;
+        }
+    }
+
+    // Styles for the search field and button
+    #pokemonName {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: $btn-shadow;
+        margin-right: 10px;
+    }
+
+    #searchBtn {
+        @include btn-styles;
+        margin: 10px;
+    }
+
+    // Styles for the next and previous buttons
+    #nextBtn,
+    #prevBtn {
+        @include btn-styles;
+        margin: 10px;
+    }
+
+    // Style for the saved Pokemon container
+    .saved-pokemon-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        border: 1px solid $main-color;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        max-width: $container-max-width;
+    }
+}
